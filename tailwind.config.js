@@ -1,13 +1,18 @@
-// tailwind.config.js
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./App.{js,jsx,ts,tsx}", 
-    "./src/**/*.{js,jsx,ts,tsx}"
-  ],
+  content: ["./components/**/*.{js,jsx,ts,tsx}", "./app/**/*.{js,jsx,ts,tsx}"],
+  presets: [require("nativewind/preset")],
   theme: {
     extend: {
+      fontFamily: {
+        'sans': ['Poppins-Regular'],
+        'light': ['Poppins-Light'],
+        'regular': ['Poppins-Regular'],
+        'medium': ['Poppins-Medium'],
+        'semibold': ['Poppins-SemiBold'],
+        'bold': ['Poppins-Bold'],
+      },
       colors: {
-        // Custom colors for the app
         'charcoal': '#2C2C2C',  // Deep Charcoal for main background
         'terracotta': '#E2725B', // Terracotta for fonts and elements
         
@@ -17,7 +22,6 @@ module.exports = {
         'terracotta-light': '#F08A77',
         'terracotta-dark': '#C75B46',
       },
-      // Font sizes using unitless values
       fontSize: {
         'xs': 12,
         'sm': 14,
@@ -30,7 +34,6 @@ module.exports = {
         '5xl': 48,
         '6xl': 60,
       },
-      // Spacing using unitless values (for margin, padding, etc.)
       spacing: {
         '0': 0,
         '0.5': 2,
@@ -63,7 +66,6 @@ module.exports = {
         '80': 320,
         '96': 384,
       },
-      // Border radius using unitless values
       borderRadius: {
         'none': 0,
         'sm': 2,
@@ -75,7 +77,6 @@ module.exports = {
         '3xl': 24,
         'full': 9999,
       },
-      // Line heights as unitless values
       lineHeight: {
         'none': 1,
         'tight': 1.25,
