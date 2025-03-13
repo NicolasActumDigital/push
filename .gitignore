@@ -2,6 +2,10 @@
 #
 .DS_Store
 
+# Explicitly exclude ios and android folders
+/ios/
+/android/
+
 # Xcode
 #
 build/

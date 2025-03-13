@@ -5,7 +5,86 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        // Custom colors for the app
+        'charcoal': '#2C2C2C',  // Deep Charcoal for main background
+        'terracotta': '#E2725B', // Terracotta for fonts and elements
+        
+        // Additional complementary colors
+        'charcoal-light': '#3D3D3D',
+        'charcoal-dark': '#1F1F1F',
+        'terracotta-light': '#F08A77',
+        'terracotta-dark': '#C75B46',
+      },
+      // Font sizes using unitless values
+      fontSize: {
+        'xs': 12,
+        'sm': 14,
+        'base': 16,
+        'lg': 18,
+        'xl': 20,
+        '2xl': 24,
+        '3xl': 30,
+        '4xl': 36,
+        '5xl': 48,
+        '6xl': 60,
+      },
+      // Spacing using unitless values (for margin, padding, etc.)
+      spacing: {
+        '0': 0,
+        '0.5': 2,
+        '1': 4,
+        '1.5': 6,
+        '2': 8,
+        '2.5': 10,
+        '3': 12,
+        '3.5': 14,
+        '4': 16,
+        '5': 20,
+        '6': 24,
+        '7': 28,
+        '8': 32,
+        '9': 36,
+        '10': 40,
+        '12': 48,
+        '14': 56,
+        '16': 64,
+        '20': 80,
+        '24': 96,
+        '28': 112,
+        '32': 128,
+        '36': 144,
+        '40': 160,
+        '48': 192,
+        '56': 224,
+        '64': 256,
+        '72': 288,
+        '80': 320,
+        '96': 384,
+      },
+      // Border radius using unitless values
+      borderRadius: {
+        'none': 0,
+        'sm': 2,
+        'DEFAULT': 4,
+        'md': 6,
+        'lg': 8,
+        'xl': 12,
+        '2xl': 16,
+        '3xl': 24,
+        'full': 9999,
+      },
+      // Line heights as unitless values
+      lineHeight: {
+        'none': 1,
+        'tight': 1.25,
+        'snug': 1.375,
+        'normal': 1.5,
+        'relaxed': 1.625,
+        'loose': 2,
+      },
+    },
   },
   plugins: [],
 }
