@@ -54,6 +54,7 @@ const textVariants = cva("font-medium", {
   },
 });
 
+// This is where we need to fix the interface
 export interface ButtonProps extends VariantProps<typeof buttonVariants> {
   onPress?: () => void;
   children?: React.ReactNode;
@@ -62,6 +63,8 @@ export interface ButtonProps extends VariantProps<typeof buttonVariants> {
   isLoading?: boolean;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
+  // Note: disabled already comes from VariantProps, but we'll keep it here too
+  // to make it clear it's part of the props
   disabled?: boolean;
 }
 
@@ -86,8 +89,8 @@ const Button: React.FC<ButtonProps> = ({
       <View className="flex-row items-center justify-center">
         {isLoading ? (
           <ActivityIndicator 
-            size="small" 
-            color={variant === 'primary' ? 'white' : '#E2725B'} 
+            size="small"
+            color={variant === 'primary' ? 'white' : '#E2725B'}
             className="mr-2" 
           />
         ) : leftIcon ? (

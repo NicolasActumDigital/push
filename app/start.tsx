@@ -1,4 +1,4 @@
-import Start from "@components/screens/start";
+import Start from "@/components/screens/Start";
 
 export default function StartingScreen() {
   return <Start />;

@@ -3,6 +3,35 @@ module.exports = {
   content: ["./components/**/*.{js,jsx,ts,tsx}", "./app/**/*.{js,jsx,ts,tsx}"],
   presets: [require("nativewind/preset")],
   theme: {
+    // Base theme properties
+    colors: {
+      // Include default colors to ensure they're available
+      transparent: 'transparent',
+      current: 'currentColor',
+      black: '#000000',
+      white: '#ffffff',
+      gray: {
+        50: '#f9fafb',
+        100: '#f3f4f6',
+        200: '#e5e7eb',
+        300: '#d1d5db',
+        400: '#9ca3af',
+        500: '#6b7280',
+        600: '#4b5563',
+        700: '#374151',
+        800: '#1f2937',
+        900: '#111827',
+      },
+      
+      // Your custom colors
+      charcoal: '#2C2C2C',
+      terracotta: '#E2725B',
+      charcoal_light: '#3D3D3D',
+      charcoal_dark: '#1F1F1F',
+      terracotta_light: '#F08A77',
+      terracotta_dark: '#C75B46',
+    },
+    
     extend: {
       fontFamily: {
         'sans': ['Poppins-Regular'],
@@ -12,16 +41,7 @@ module.exports = {
         'semibold': ['Poppins-SemiBold'],
         'bold': ['Poppins-Bold'],
       },
-      colors: {
-        'charcoal': '#2C2C2C',  // Deep Charcoal for main background
-        'terracotta': '#E2725B', // Terracotta for fonts and elements
-        
-        // Additional complementary colors
-        'charcoal-light': '#3D3D3D',
-        'charcoal-dark': '#1F1F1F',
-        'terracotta-light': '#F08A77',
-        'terracotta-dark': '#C75B46',
-      },
+      
       fontSize: {
         'xs': 12,
         'sm': 14,
@@ -34,6 +54,7 @@ module.exports = {
         '5xl': 48,
         '6xl': 60,
       },
+      
       spacing: {
         '0': 0,
         '0.5': 2,
@@ -66,6 +87,7 @@ module.exports = {
         '80': 320,
         '96': 384,
       },
+      
       borderRadius: {
         'none': 0,
         'sm': 2,
@@ -77,6 +99,7 @@ module.exports = {
         '3xl': 24,
         'full': 9999,
       },
+      
       lineHeight: {
         'none': 1,
         'tight': 1.25,

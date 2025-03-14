@@ -1,0 +1,61 @@
+{
+    "common": {
+      "version": "Version",
+      "privacyPolicy": "Politique de Confidentialité",
+      "termsOfService": "Conditions d'Utilisation",
+      "getStarted": "Commencer",
+      "next": "Suivant",
+      "back": "Retour",
+      "cancel": "Annuler",
+      "save": "Enregistrer",
+      "loading": "Chargement...",
+      "error": "Erreur",
+      "tryAgain": "Réessayer"
+    },
+    "screens": {
+      "start": {
+        "title": "FastBooking",
+        "description": "Voyager simplement, réserver rapidement. Votre voyage commence ici.",
+        "getStarted": "Commencer",
+        "privacy": "Politique de Confidentialité",
+        "version": "Version"
+      },
+      "booking": {
+        "title": "Réserver Votre Voyage",
+        "search": "Rechercher des destinations",
+        "dates": "Sélectionner les dates",
+        "guests": "Nombre de voyageurs",
+        "findOptions": "Trouver des Options"
+      },
+      "home": {
+        "title": "Bienvenue",
+        "upcomingTrips": "Voyages à Venir",
+        "noTrips": "Aucun voyage à venir",
+        "discover": "Découvrir des Endroits",
+        "viewAll": "Voir Tout"
+      },
+      "itinerary": {
+        "title": "Votre Itinéraire",
+        "day": "Jour {{day}}",
+        "activities": "Activités",
+        "transport": "Transport",
+        "accommodation": "Hébergement"
+      },
+      "settings": {
+        "title": "Paramètres",
+        "account": "Compte",
+        "notifications": "Notifications",
+        "language": "Langue",
+        "logout": "Déconnexion",
+        "darkMode": "Mode Sombre",
+        "support": "Service Client"
+      },
+      "questionnaire": {
+        "title": "Préférences de Voyage",
+        "subtitle": "Aidez-nous à personnaliser votre expérience",
+        "preferences": "Préférences",
+        "interests": "Centres d'Intérêt",
+        "budget": "Budget"
+      }
+    }
+  }
