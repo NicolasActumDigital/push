@@ -1,6 +1,5 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-// Import getLocales via require to avoid TypeScript issues if necessary
 import { getLocales } from "expo-localization"; 
 import en from "@/locales/en.json";
 import fr from "@/locales/fr.json";
@@ -17,17 +16,16 @@ const languageDetector = {
   cacheUserLanguage: () => {},
 };
 
-// Use type assertions to bypass TypeScript errors
 (i18n as any)
   .use(languageDetector as any)
   .use(initReactI18next)
   .init({
     fallbackLng: "en",
     resources: {
-      en,
-      fr,
+      en: { translation: en },
+      fr: { translation: fr }
     },
-    debug: false,
+    debug: true, 
     cache: {
       enabled: true,
     },

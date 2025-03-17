@@ -1,20 +1,12 @@
-const { getDefaultConfig } = require('expo/metro-config');
-const { withNativeWind } = require('nativewind/metro');
+// Learn more https://docs.expo.io/guides/customizing-metro
+const { getDefaultConfig } = require("@expo/metro-config");
+const { withNativeWind } = require("nativewind/metro");
+const path = require("path");
 
-module.exports = (() => {
-  const config = getDefaultConfig(__dirname);
+const defaultConfig = getDefaultConfig(__dirname);
+defaultConfig.resolver.sourceExts.push("cjs");
 
-  const { transformer, resolver } = config;
+// defaultConfig.resolver.resolverMainFields.unshift("sbmodern");
 
-  config.transformer = {
-    ...transformer,
-    babelTransformerPath: require.resolve('react-native-svg-transformer'),
-  };
-  config.resolver = {
-    ...resolver,
-    assetExts: resolver.assetExts.filter(ext => ext !== 'svg'),
-    sourceExts: [...resolver.sourceExts, 'svg'],
-  };
-
-  return withNativeWind(config, { input: './tailwind.config.js' });
-})();
+const config = withNativeWind(defaultConfig, { input: "./global.css" });
+module.exports = config; 

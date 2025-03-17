@@ -8,14 +8,12 @@
     "reset-project": "node ./scripts/reset-project.js",
     "patch": "npx patch-package",
     "postinstall": "patch-package",
-    "sb:start": "sb-rn-get-stories && expo start",
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web",
     "test:watch": "jest --watchAll",
     "test": "jest --watch --coverage=false --changedSince=origin/main",
-    "lint": "expo lint",
-    "storybook-generate": "sb-rn-get-stories"
+    "lint": "expo lint"
   },
   "jest": {
     "preset": "jest-expo",
@@ -41,9 +39,9 @@
   },
   "dependencies": {
     "@expo/metro-config": "^0.19.12",
+    "@react-native-async-storage/async-storage": "^2.1.2",
     "@rn-primitives/slot": "^1.1.0",
     "@rn-primitives/types": "^1.1.0",
-    "@storybook/react-native": "^8.5.5",
     "@tanstack/react-query": "^5.67.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -59,6 +57,7 @@
     "expo-status-bar": "^2.0.1",
     "i18next": "^24.2.3",
     "i18next-resources-to-backend": "^1.2.1",
+    "immer": "^10.1.1",
     "nativewind": "^4.1.23",
     "react": "18.3.1",
     "react-i18next": "^15.4.1",
@@ -70,7 +69,7 @@
     "react-native-screens": "^4.9.2",
     "react-native-worklets-core": "^1.5.0",
     "tailwind-merge": "^3.0.2",
-    "tailwindcss": "3.4.1",
+    "tailwindcss": "3.4.17",
     "undici": "^6.18.2",
     "zustand": "^5.0.1"
   },
