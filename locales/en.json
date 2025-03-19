@@ -14,48 +14,11 @@
     },
     "screens": {
       "start": {
-        "title": "FastBooking",
-        "description": "Travel made simple, booking made fast. Your journey starts here.",
+        "title": "Push App",
+        "description": "Push notification app",
         "getStarted": "Get Started",
         "privacy": "Privacy Policy",
         "version": "Version"
-      },
-      "booking": {
-        "title": "Book Your Trip",
-        "search": "Search for destinations",
-        "dates": "Select dates",
-        "guests": "Number of guests",
-        "findOptions": "Find Options"
-      },
-      "home": {
-        "title": "Welcome back",
-        "upcomingTrips": "Upcoming Trips",
-        "noTrips": "No upcoming trips",
-        "discover": "Discover Places",
-        "viewAll": "View All"
-      },
-      "itinerary": {
-        "title": "Your Itinerary",
-        "day": "Day {{day}}",
-        "activities": "Activities",
-        "transport": "Transport",
-        "accommodation": "Accommodation"
-      },
-      "settings": {
-        "title": "Settings",
-        "account": "Account",
-        "notifications": "Notifications",
-        "language": "Language",
-        "logout": "Log out",
-        "darkMode": "Dark Mode",
-        "support": "Customer Support"
-      },
-      "questionnaire": {
-        "title": "Travel Preferences",
-        "subtitle": "Help us customize your experience",
-        "preferences": "Preferences",
-        "interests": "Interests",
-        "budget": "Budget"
       }
     }
   }

@@ -44,7 +44,7 @@ const LegalInfoDisplay: React.FC<LegalInfoDisplayProps> = memo(({ className = ''
 
       {/* Copyright */}
       <Text className="text-gray-300 text-xs mt-2">
-        © {new Date().getFullYear()} FastBooking
+        © {new Date().getFullYear()} Push
       </Text>
     </View>
   );

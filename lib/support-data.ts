@@ -1,6 +1,6 @@
-export type SupportedLanguages = "en" | "fr"
+export type SupportedLanguages = "en" | "cs";
 
-export const supportedLanguages = ["en", "fr"];
+export const supportedLanguages = ["en", "cs"];
 
 export const supportData: Record<
   SupportedLanguages,
@@ -15,9 +15,9 @@ export const supportData: Record<
     countryCode: "UK | EN",
     label: "United Kingdom"
   },
-  fr: {
-    code: "fr_FR",
-    countryCode: "FR | FR",
-    label: "France"
+  cs: {
+    code: "cs_CZ",
+    countryCode: "CZ | CS",
+    label: "Czech Republic"
   }
 };

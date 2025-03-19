@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "685301756032",
+    "project_id": "push-6f2f0",
+    "storage_bucket": "push-6f2f0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:685301756032:android:94e753fbf00558e40e3665",
+        "android_client_info": {
+          "package_name": "com.nicolasactumdigital.push.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCr7SYVOLBhf8ZuBmRx6RvX5n0lM5B1Fg4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

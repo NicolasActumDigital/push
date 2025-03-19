@@ -2,7 +2,7 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import { getLocales } from "expo-localization"; 
 import en from "@/locales/en.json";
-import fr from "@/locales/fr.json";
+import cs from "@/locales/cs.json"; 
 
 // Creating a language detection plugin using expo
 const languageDetector = {
@@ -23,7 +23,7 @@ const languageDetector = {
     fallbackLng: "en",
     resources: {
       en: { translation: en },
-      fr: { translation: fr }
+      cs: { translation: cs }
     },
     debug: true, 
     cache: {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { TouchableOpacity, Text, ActivityIndicator, View } from 'react-native';
 import { cva, type VariantProps } from 'class-variance-authority';
 
@@ -54,7 +54,6 @@ const textVariants = cva("font-medium", {
   },
 });
 
-// This is where we need to fix the interface
 export interface ButtonProps extends VariantProps<typeof buttonVariants> {
   onPress?: () => void;
   children?: React.ReactNode;
@@ -63,12 +62,12 @@ export interface ButtonProps extends VariantProps<typeof buttonVariants> {
   isLoading?: boolean;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
-  // Note: disabled already comes from VariantProps, but we'll keep it here too
-  // to make it clear it's part of the props
   disabled?: boolean;
+  // Adding asChild property to support slot pattern
+  asChild?: boolean;
 }
 
-const Button: React.FC<ButtonProps> = ({
+const Button = forwardRef<React.ElementRef<typeof TouchableOpacity>, ButtonProps>(({
   children,
   variant,
   size,
@@ -79,38 +78,64 @@ const Button: React.FC<ButtonProps> = ({
   leftIcon,
   rightIcon,
   disabled = false,
-}) => {
+  asChild = false,
+  ...props
+}, ref) => {
+  const Comp = asChild ? View : TouchableOpacity;
+  
+  const buttonContent = (
+    <View className="flex-row items-center justify-center">
+      {isLoading ? (
+        <ActivityIndicator 
+          size="small"
+          color={variant === 'primary' ? 'white' : '#E2725B'}
+          className="mr-2" 
+        />
+      ) : leftIcon ? (
+        <View className="mr-2">{leftIcon}</View>
+      ) : null}
+      
+      {typeof children === 'string' ? (
+        <Text className={`${textVariants({ variant, size })} ${textClassName}`}>
+          {children}
+        </Text>
+      ) : (
+        children
+      )}
+      
+      {rightIcon && !isLoading && (
+        <View className="ml-2">{rightIcon}</View>
+      )}
+    </View>
+  );
+
+  if (asChild) {
+    // When used with asChild, we're rendering just the inner content
+    // and expecting the child component to handle the touchable behavior
+    return (
+      <Comp
+        ref={ref}
+        className={`${buttonVariants({ variant, size, disabled: disabled || isLoading })} ${className}`}
+        {...props}
+      >
+        {children}
+      </Comp>
+    );
+  }
+
   return (
-    <TouchableOpacity
+    <Comp
+      ref={ref}
       onPress={onPress}
       disabled={disabled || isLoading}
       className={`${buttonVariants({ variant, size, disabled: disabled || isLoading })} ${className}`}
+      {...props}
     >
-      <View className="flex-row items-center justify-center">
-        {isLoading ? (
-          <ActivityIndicator 
-            size="small"
-            color={variant === 'primary' ? 'white' : '#E2725B'}
-            className="mr-2" 
-          />
-        ) : leftIcon ? (
-          <View className="mr-2">{leftIcon}</View>
-        ) : null}
-        
-        {typeof children === 'string' ? (
-          <Text className={`${textVariants({ variant, size })} ${textClassName}`}>
-            {children}
-          </Text>
-        ) : (
-          children
-        )}
-        
-        {rightIcon && !isLoading && (
-          <View className="ml-2">{rightIcon}</View>
-        )}
-      </View>
-    </TouchableOpacity>
+      {buttonContent}
+    </Comp>
   );
-};
+});
+
+Button.displayName = 'Button';
 
 export default Button;

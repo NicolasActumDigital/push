@@ -1,0 +1,24 @@
+{
+  "common": {
+    "version": "Verze",
+    "privacyPolicy": "Zásady ochrany osobních údajů",
+    "termsOfService": "Podmínky služby",
+    "getStarted": "Začít",
+    "next": "Další",
+    "back": "Zpět",
+    "cancel": "Zrušit",
+    "save": "Uložit",
+    "loading": "Načítání...",
+    "error": "Chyba",
+    "tryAgain": "Zkusit znovu"
+  },
+  "screens": {
+    "start": {
+      "title": "Push App",
+      "description": "Aplikace pro push notifikace",
+      "getStarted": "Začít",
+      "privacy": "Zásady ochrany osobních údajů",
+      "version": "Verze"
+    }
+  }
+}
