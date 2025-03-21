@@ -3,15 +3,15 @@ const variant = process.env.APP_VARIANT || "development";
 const config = {
   development: {
     name: "Push (Dev)",
-    id: "com.nicolasactumdigital.push.dev",
+    id: "com.actumdigital.pushdev",
   },
   staging: {
     name: "Push (Stage)",
-    id: "com.nicolasactumdigital.push.stage",
+    id: "com.actumdigital.pushdev",
   },
   release: {
     name: "Push",
-    id: "com.nicolasactumdigital.push",
+    id: "com.actumdigital.pushdev",
   },
 };
 
@@ -21,18 +21,19 @@ const firebaseConfigPath = {
     android: "./config/dev/google-services.json",
   },
   staging: {
-    ios: "./config/dev/GoogleService-Info.plist", 
-    android: "./config/dev/google-services.json",
+    ios: "./config/staging/GoogleService-Info.plist", 
+    android: "./config/staging/google-services.json",
   },
   release: {
-    ios: "./config/dev/GoogleService-Info.plist", 
-    android: "./config/dev/google-services.json",
+    ios: "./config/release/GoogleService-Info.plist", 
+    android: "./config/release/google-services.json",
   },
 };
 
 module.exports = {
   name: config[variant].name,
   slug: "Push",
+  scheme: "pushdev",
   version: "1.0.0",
   orientation: "portrait",
   icon: "./assets/icon.png",
@@ -53,6 +54,8 @@ module.exports = {
     infoPlist: {
       NSCameraUsageDescription: "$(PRODUCT_NAME) needs access to your Camera.",
       UIBackgroundModes: ['remote-notification'],
+      // Add this line to ensure push notifications work
+      "aps-environment": "development"
     },
     buildNumber: "1",
   },
@@ -83,10 +86,23 @@ module.exports = {
         }
       }
     ],
-    "@react-native-firebase/app",
-    "@react-native-firebase/crashlytics"
+    // Configure Firebase plugins with needed options
+    ["@react-native-firebase/app", {
+      // No custom configuration needed
+    }],
+    "@react-native-firebase/crashlytics",
+    ["@react-native-firebase/messaging", {
+      ios: {
+        // Explicitly enable background mode
+        backgroundMode: true
+      }
+    }]
   ],
   experiments: {
     typedRoutes: true,
   },
+  // Add this to ensure the app has access to the config files
+  extra: {
+    firebaseConfigPath: firebaseConfigPath[variant]
+  }
 };

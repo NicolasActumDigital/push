@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "685301756032",
-    "project_id": "push-6f2f0",
-    "storage_bucket": "push-6f2f0.firebasestorage.app"
+    "project_number": "396167828340",
+    "project_id": "push-e948f",
+    "storage_bucket": "push-e948f.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:685301756032:android:94e753fbf00558e40e3665",
+        "mobilesdk_app_id": "1:396167828340:android:a0690ea3292ab854b7d221",
         "android_client_info": {
-          "package_name": "com.nicolasactumdigital.push.dev"
+          "package_name": "com.actumdigital.pushdev"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCr7SYVOLBhf8ZuBmRx6RvX5n0lM5B1Fg4"
+          "current_key": "AIzaSyDJpVMxc7kD4pptjKpNujoFs7DvdcdPthc"
         }
       ],
       "services": {
